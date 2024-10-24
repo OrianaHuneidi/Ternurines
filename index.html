@@ -6,8 +6,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css" />
 		<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
-		<link rel="stylesheet" href="css/style.css" />
-		<link rel="shortcut icon" href="imagenes/iconternurin.jpg" />
+		<link rel="stylesheet" href="assets/css/style.css" />
+		<link rel="shortcut icon" href="assets/imagenes/iconternurin.jpg" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
@@ -31,15 +31,50 @@
 			<div class="container-fluid position-relative">
 				<div class="d-flex mt-3 mb-4">
 					<img
-						src="imagenes/iconprincipal.png"
+						src="assets/imagenes/iconprincipal.png"
 						alt="Logo"
 						width="45"
 						height="50"
 						class="d-inline-block iconprincipal ms-3"
 					/>
 					<h1 class="tituloprincipal m-auto text-center">Sylvanian families</h1>
+					<button class="btn btn-primary mb-4 button_formulario" id="buttonLogin" style="position:absolute; right:10px" data-bs-toggle="modal" data-bs-target="#loginUser">Login</button>
+					<button class="btn btn-primary mb-4 button_formulario" id="buttonLogout" style="position:absolute; right:10px">Salir</button>
+					<div
+						class="modal fade modal-producto container-fluid flex-row"
+						id="loginUser"
+					>
+						<div class="modal-dialog modal-dialog-centered modal-lg">
+							<div class="modal-content contenedor_modal row mx-0">
+								<div class="modal-header border-0">
+									<button
+										type="button"
+										class="btn-close"
+										data-bs-dismiss="modal"
+										aria-label="Close"
+									></button>
+								</div>
+								<div class="row">
+									<div class="col-md-6 m-auto mb-5">
+										<h2>Login</h2>
+										<form id="formLogin">
+											<div class="mb-3">
+												<label for="emailUserLogin" class="form-label">correo</label>
+												<input type="text" class="form-control" id="emailUserLogin" name="imagen" required>
+											</div>
+											<div class="mb-3">
+												<label for="passwordUserLogin" class="form-label">contraseña</label>
+												<input type="text" class="form-control" id="passwordUserLogin" name="nombre" required>
+											</div>
+											<button type="submit" class="btn btn-primary">Aceptar</button>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
-		
+				<nav>
 					<ul class="nav justify-content-center m-auto">
 						<li class="nav-item">
 							<a
@@ -105,7 +140,7 @@
 							<h2 class="p-3 text-center">Diseño</h2>
 							<img
 								alt="casita de ternurin"
-								src="imagenes/historiaternurin.png"
+								src="assets/imagenes/historiaternurin.png"
 								class="rounded img-fluid primeraimagen"
 							/>
 						</div>
@@ -117,14 +152,14 @@
 				>
 					<div class="col">
 						<img
-							src="imagenes/segundaimagen.png"
+							src="assets/imagenes/segundaimagen.png"
 							class="rounded float-start segundaimagen"
 							alt="primera casa ternurin"
 						/>
 					</div>
 					<div class="col">
 						<img
-							src="imagenes/terceraimagen.jpg"
+							src="assets/imagenes/terceraimagen.jpg"
 							class="rounded float-end terceraimagen"
 							alt="primeros ternurines"
 						/>
@@ -147,45 +182,62 @@
 					</div>
 					<div class="col-md-6 rounded">
 						<div class="card tercera_seccion">
-							<div class="card-body p-5">
-								<h2 class="mb-5 text-center">¡Contáctanos!</h2>
-								<form class="form-inline">
+							<div class="card-body p-5" id="registroForm">
+								<h2 class="mb-5 text-center">Registrate!</h2>
+								<form class="form-inline" id="formRegister">
 									<div class="form-group row mb-3">
-										<label for="nombre" class="col-sm-5 col-form-label"
+										<label for="nameUser" class="col-sm-5 col-form-label"
 											>Nombre</label
 										>
 										<div class="col-sm-7">
 											<input
 												type="text"
 												class="form-control"
-												id="nombre"
+												id="nameUser"
 												placeholder="Ingrese su nombre"
+												required
 											/>
 										</div>
 									</div>
 									<div class="form-group row mb-3">
-										<label for="email" class="col-sm-5 col-form-label"
+										<label for="emailUser" class="col-sm-5 col-form-label"
 											>Correo electrónico</label
 										>
 										<div class="col-sm-7">
 											<input
 												type="email"
 												class="form-control"
-												id="email"
+												id="emailUser"
 												placeholder="Ingrese su correo electrónico"
+												required
 											/>
 										</div>
 									</div>
-									<div class="form-group row mb-5">
-										<label for="phone" class="col-sm-5 col-form-label"
+									<div class="form-group row mb-3">
+										<label for="phoneUser" class="col-sm-5 col-form-label"
 											>telefono</label
 										>
 										<div class="col-sm-7">
 											<input
 												type="tel"
 												class="form-control"
-												id="phone"
+												id="phoneUser"
 												placeholder="Ingrese su numero de telefono"
+												required
+											/>
+										</div>
+									</div>
+									<div class="form-group row mb-5">
+										<label for="passwordUser" class="col-sm-5 col-form-label"
+											>Contraseña</label
+										>
+										<div class="col-sm-7">
+											<input
+												type="password"
+												class="form-control"
+												id="passwordUser"
+												placeholder="Ingrese una contraseña"
+												required
 											/>
 										</div>
 									</div>
@@ -195,6 +247,62 @@
 											class="btn btn-primary button_formulario"
 										>
 											Enviar
+										</button>
+									</div>
+								</form>
+							</div>
+
+							<div class="card-body p-5" id="contactameForm">
+								<h2 class="mb-5 text-center">Contactame!</h2>
+								<form class="form-inline" id="formContactame">
+									<div class="form-group row mb-3">
+										<label for="nameContactame" class="col-sm-5 col-form-label"
+											>Nombre</label
+										>
+										<div class="col-sm-7">
+											<input
+												type="text"
+												class="form-control"
+												id="nameContactame"
+												placeholder="Ingrese su nombre"
+												required
+											/>
+										</div>
+									</div>
+									<div class="form-group row mb-3">
+										<label for="emailContactame" class="col-sm-5 col-form-label"
+											>Correo electrónico</label
+										>
+										<div class="col-sm-7">
+											<input
+												type="email"
+												class="form-control"
+												id="emailContactame"
+												placeholder="Ingrese su correo electrónico"
+												required
+											/>
+										</div>
+									</div>
+									<div class="form-group row mb-3">
+										<label for="phoneContactame" class="col-sm-5 col-form-label"
+											>telefono</label
+										>
+										<div class="col-sm-7">
+											<input
+												type="tel"
+												class="form-control"
+												id="phoneContactame"
+												placeholder="Ingrese su numero de telefono"
+												required
+											/>
+										</div>
+									</div>
+									<div class="text-center">
+										<button
+											type="submit"
+											class="btn btn-primary button_formulario"
+										>
+											Aceptar
 										</button>
 									</div>
 								</form>
@@ -305,6 +413,7 @@
 				</div>
 			</div>
 		</footer>
+		<script src="assets/js/main.js"></script>
 		<script src="assets/bootstrap/js/bootstrap.bundle.js"></script>
 	</body>
 </html>

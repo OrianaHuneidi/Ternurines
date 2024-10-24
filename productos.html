@@ -1,294 +1,411 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css" />
-		<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
-		<link rel="stylesheet" href="css/style.css" />
-		<link rel="shortcut icon" href="imagenes/iconternurin.jpg" />
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap"
-			rel="stylesheet"
-		/>
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
-			rel="stylesheet"
-		/>
-		<link
-			rel="stylesheet"
-			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-		/>
-		<title>Ternurines</title>
-	</head>
-	<body>
-		<header>
-			<div class="container-fluid position-relative">
-				<div class="d-flex mt-3 mb-4">
-					<img
-						src="imagenes/iconprincipal.png"
-						alt="Logo"
-						width="45"
-						height="50"
-						class="d-inline-block iconprincipal ms-3"
-					/>
-					<h1 class="tituloprincipal m-auto text-center">Sylvanian families</h1>
-				</div>
-				<nav>
-					<ul class="nav justify-content-center m-auto">
-						<li class="nav-item">
-							<a
-								class="nav-link active border-end border-dark border-2 navegacion"
-								aria-current="page"
-								href="index.html"
-								>Inicio</a
-							>
-						</li>
-						<li class="nav-item">
-							<a
-								class="nav-link border-end border-dark border-2 navegacion seleccion"
-								href="#"
-								>Productos</a
-							>
-						</li>
-						<li class="nav-item">
-							<a
-								class="nav-link border-end border-dark border-2 navegacion"
-								href="compania.html"
-								>Compañía</a
-							>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link navegacion" href="#">Blog</a>
-						</li>
-					</ul>
-				</nav>
-				<p class="text-center col-md-3 m-auto textoprincipal mb-4 mt-4">
-					Las Sylvanian Families son valoradas por su encanto y su capacidad
-					para fomentar la creatividad y el juego imaginativo en los niños.
-				</p>
-			</div>
-		</header>
-		<main>
-			<section>
-				<div class="container-fluid d-flex justify-content-center mt-5">
-					<div class="row">
-						<div class="col-md-6 ms-3 ms-md-5 w-100">
-							<h2>Juguetes de sylvanian families</h2>
-						</div>
-					</div>
-					<div class="ms-auto ms-5 me-md-5 col-md-3">
-						<div class="container">
-							<form role="search">
-								<div class="position-relative">
-									<i class="bi bi-search position-absolute iconbusqueda"></i>
-									<input
-										class="form-control rounded-pill ps-4 busqueda"
-										type="search"
-										placeholder="Search"
-										aria-label="Search"
-									/>
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="shortcut icon" href="assets/imagenes/iconternurin.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <title>Ternurines</title>
+  </head>
+  <body>
+    <header>
+      <div class="container-fluid position-relative">
+        <div class="d-flex mt-3 mb-4">
+          <img
+            src="assets/imagenes/iconprincipal.png"
+            alt="Logo"
+            width="45"
+            height="50"
+            class="d-inline-block iconprincipal ms-3"
+          />
+          <h1 class="tituloprincipal m-auto text-center">Sylvanian families</h1>
+          <button
+            class="btn btn-primary mb-4 button_formulario"
+            id="buttonLogin"
+            style="position: absolute; right: 10px"
+            data-bs-toggle="modal"
+            data-bs-target="#registrarProducto"
+          >
+            Login
+          </button>
+          <button
+            class="btn btn-primary mb-4 button_formulario"
+            id="buttonLogout"
+            style="position: absolute; right: 10px"
+          >
+            Salir
+          </button>
+          <div
+            class="modal fade modal-producto container-fluid flex-row"
+            id="registrarProducto"
+          >
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+              <div class="modal-content contenedor_modal row mx-0">
+                <div class="modal-header border-0">
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 m-auto mb-5">
+                    <h2>Login</h2>
+                    <form id="formLogin">
+                      <div class="mb-3">
+                        <label for="emailUserLogin" class="form-label"
+                          >correo</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="emailUserLogin"
+                          name="imagen"
+                          required
+                        />
+                      </div>
+                      <div class="mb-3">
+                        <label for="passwordUserLogin" class="form-label"
+                          >contraseña</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="passwordUserLogin"
+                          name="nombre"
+                          required
+                        />
+                      </div>
+                      <button type="submit" class="btn btn-primary">
+                        Aceptar
+                      </button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <nav>
+          <ul class="nav justify-content-center m-auto">
+            <li class="nav-item">
+              <a
+                class="nav-link active border-end border-dark border-2 navegacion"
+                aria-current="page"
+                href="index.html"
+                >Inicio</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link border-end border-dark border-2 navegacion seleccion"
+                href="#"
+                >Productos</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link border-end border-dark border-2 navegacion"
+                href="compania.html"
+                >Compañía</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link navegacion" href="#">Blog</a>
+            </li>
+          </ul>
+        </nav>
+        <p class="text-center col-md-3 m-auto textoprincipal mb-4 mt-4">
+          Las Sylvanian Families son valoradas por su encanto y su capacidad
+          para fomentar la creatividad y el juego imaginativo en los niños.
+        </p>
+      </div>
+    </header>
+    <main>
+      <section>
+        <div class="container-fluid d-flex justify-content-center mt-5">
+          <div class="row">
+            <div class="col-md-6 ms-3 ms-md-5 w-100">
+              <h2>Juguetes de sylvanian families</h2>
+            </div>
+          </div>
+          <div class="ms-auto ms-5 me-md-5 col-md-3">
+            <div class="container">
+              <form role="search">
+                <div class="position-relative">
+                  <i class="bi bi-search position-absolute iconbusqueda"></i>
+                  <input
+                    class="form-control rounded-pill ps-4 busqueda"
+                    type="search"
+                    placeholder="Search"
+                    aria-label="Search"
+                  />
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
 
-				<div class="container mb-5 mt-5">
-					<div class="row">
-						<div class="col-md-4">
-							<div
-								class="card tarjeta-producto rounded py-3 px-2 mb-4"
-								data-bs-toggle="modal"
-								data-bs-target="#detallesProducto"
-							>
-								<img
-									src="imagenes/juguete1.png"
-									class="card-img-top imagen-producto rounded m-auto my-2"
-									alt="Imagen de primer producto"
-								/>
-								<div class="card-body">
-									<h5 class="card-title nombre-producto">Amigos festejosos</h5>
-									<p class="card-text precio-producto">$33.47</p>
-									<button class="btn btn-primary agregar-al-carrito py-2 px-2">
-										Agregar al carrito
-									</button>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4">
-							<div
-								class="card tarjeta-producto rounded py-3 px-2 mb-4"
-								data-bs-toggle="modal"
-								data-bs-target="#detallesProducto"
-							>
-								<img
-									src="imagenes/juguete2.jpg"
-									class="card-img-top imagen-producto rounded m-auto my-2"
-									alt="imagen de segundo producto"
-								/>
-								<div class="card-body">
-									<h5 class="card-title nombre-producto">
-										Ternurines a crochet
-									</h5>
-									<p class="card-text precio-producto">$6</p>
-									<button class="btn btn-primary agregar-al-carrito py-2 px-2">
-										Agregar al carrito
-									</button>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4">
-							<div
-								class="card tarjeta-producto rounred py-3 px-2 mb-4"
-								data-bs-toggle="modal"
-								data-bs-target="#detallesProducto"
-							>
-								<img
-									src="imagenes/juguete3.png"
-									class="card-img-top imagen-producto rounded m-auto my-2"
-									alt="imagen de tercer producto"
-								/>
-								<div class="card-body">
-									<h5 class="card-title nombre-producto">Bebés duendecillos</h5>
-									<p class="card-text precio-producto">$40.00</p>
-									<button class="btn btn-primary agregar-al-carrito py-2 px-2">
-										Agregar al carrito
-									</button>
-								</div>
-							</div>
-						</div>
-					</div>
+        <div class="container mb-5 mt-5">
+          <div class="row">
+            <div class="col-md-4">
+              <div
+                class="card tarjeta-producto rounded py-3 px-2 mb-4"
+                data-bs-toggle="modal"
+                data-bs-target="#detallesProducto"
+              >
+                <img
+                  src="assets/imagenes/juguete1.png"
+                  class="card-img-top imagen-producto rounded m-auto my-2"
+                  alt="Imagen de primer producto"
+                />
+                <div class="card-body">
+                  <h5 class="card-title nombre-producto">Amigos festejosos</h5>
+                  <p class="card-text precio-producto">$33.47</p>
+                  <button class="btn btn-primary agregar-al-carrito py-2 px-2">
+                    Agregar al carrito
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div
+                class="card tarjeta-producto rounded py-3 px-2 mb-4"
+                data-bs-toggle="modal"
+                data-bs-target="#detallesProducto"
+              >
+                <img
+                  src="assets/imagenes/juguete2.jpg"
+                  class="card-img-top imagen-producto rounded m-auto my-2"
+                  alt="imagen de segundo producto"
+                />
+                <div class="card-body">
+                  <h5 class="card-title nombre-producto">
+                    Ternurines a crochet
+                  </h5>
+                  <p class="card-text precio-producto">$6</p>
+                  <button class="btn btn-primary agregar-al-carrito py-2 px-2">
+                    Agregar al carrito
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div
+                class="card tarjeta-producto rounred py-3 px-2 mb-4"
+                data-bs-toggle="modal"
+                data-bs-target="#detallesProducto"
+              >
+                <img
+                  src="assets/imagenes/juguete3.png"
+                  class="card-img-top imagen-producto rounded m-auto my-2"
+                  alt="imagen de tercer producto"
+                />
+                <div class="card-body">
+                  <h5 class="card-title nombre-producto">Bebés duendecillos</h5>
+                  <p class="card-text precio-producto">$40.00</p>
+                  <button class="btn btn-primary agregar-al-carrito py-2 px-2">
+                    Agregar al carrito
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
 
-					<div
-						class="modal fade modal-producto container-fluid flex-row"
-						id="detallesProducto"
-					>
-						<div class="modal-dialog modal-dialog-centered modal-lg">
-							<div class="modal-content contenedor_modal row mx-0">
-								<div class="modal-header border-0">
-									<button
-										type="button"
-										class="btn-close"
-										data-bs-dismiss="modal"
-										aria-label="Close"
-									></button>
-								</div>
-								<div class="row">
-									<div class="col-md-5 m-auto m-3 ms-2 ms-md-4">
-										<img
-											src="https://placehold.co/800@2x.png"
-											class="img-fluid imagen-producto rounded"
-											alt="imagen del producto"
-										/>
-									</div>
-									<div class="col-md-6 m-auto mb-5">
-										<h4
-											class="modal-title nombre_p text-start mb-2 mt-1"
-											id="exampleModalLabel"
-										>
-											Titulo del producto
-										</h4>
-										<p class="text-start">
-											Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-											Architecto, omnis. Veritatis, odit sunt laboriosam nulla
-											sint quibusdam possimus commodi eaque quo illum. Labore
-											eligendi perspiciatis sit ab voluptatum doloremque
-											suscipit.
-										</p>
-										<p class="precio text-start">$000</p>
-										<div class="modal-footer border-0">
-											<button
-												type="button"
-												class="btn btn-primary boton_producto align-items-center m-auto"
-											>
-												Agregar al carrito
-											</button>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-		</main>
-		<footer>
-			<div class="container-fluid pie_de_pagina">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-4 d-flex justify-content-center">
-							<div class="py-md-5 my-auto pe-4 py-4">
-								<ul class="list-unstyled">
-									<li class="mb-3">Facebook</li>
-									<li class="mb-3">Instagram</li>
-									<li>Pagina Oficial</li>
-								</ul>
-							</div>
-							<div>
-								<ul class="list-unstyled py-md-5 py-4">
-									<li class="mb-3">
-										<a
-											href="https://www.facebook.com/SylvanianFamilies.es"
-											target="_blank"
-											class="enlace_rs"
-											><i class="bi bi-facebook icon_rs"></i
-										></a>
-									</li>
-									<li class="mb-3">
-										<a
-											href="https://www.instagram.com/sylvanianfamilies_es/"
-											target="_blank"
-											class="enlace_rs"
-											><i class="bi bi-instagram icon_rs"></i
-										></a>
-									</li>
-									<li>
-										<a
-											href="https://www.sylvanianfamilies.com/es-es/"
-											target="_blank"
-											class="enlace_rs"
-											><i class="bi bi-cursor-fill icon_rs"></i
-										></a>
-									</li>
-								</ul>
-							</div>
-						</div>
-						<div class="col-md-4 p-md-5 m-auto py-2">
-							<div class="container">
-								<form role="search">
-									<div class="position-relative">
-										<i class="bi bi-search position-absolute iconbusqueda"></i>
-										<input
-											class="form-control rounded-pill ps-4"
-											type="search"
-											placeholder="Search"
-											aria-label="Search"
-										/>
-									</div>
-								</form>
-							</div>
-						</div>
-						<div class="col-md-4 p-5 m-auto">
-							<p>
-								Disfruta de nuestro contenido para nuestras redes sociales, ten
-								atento a la mercancia nueva y otras actualizaciones.
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</footer>
-		<script
-			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-			integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-			crossorigin="anonymous"
-		></script>
-		<script src="js/tarjetas.js"></script>
-		<script src="assets/bootstrap/js/bootstrap.bundle.js"></script>
-	</body>
+          <div
+            class="modal fade modal-producto container-fluid flex-row"
+            id="detallesProducto"
+          >
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+              <div class="modal-content contenedor_modal row mx-0">
+                <div class="modal-header border-0">
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="row">
+                  <div class="col-md-5 m-auto m-3 ms-2 ms-md-4">
+                    <img
+                      src="https://placehold.co/800@2x.png"
+                      class="img-fluid imagen-producto rounded"
+                      alt="imagen del producto"
+                    />
+                  </div>
+                  <div class="col-md-6 m-auto mb-5">
+                    <h4
+                      class="modal-title nombre_p text-start mb-2 mt-1"
+                      id="exampleModalLabel"
+                    >
+                      Titulo del producto
+                    </h4>
+                    <p class="text-start">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Architecto, omnis. Veritatis, odit sunt laboriosam nulla
+                      sint quibusdam possimus commodi eaque quo illum. Labore
+                      eligendi perspiciatis sit ab voluptatum doloremque
+                      suscipit.
+                    </p>
+                    <p class="precio text-start">$000</p>
+                    <div class="modal-footer border-0">
+                      <button
+                        type="button"
+                        class="btn btn-primary boton_producto align-items-center m-auto"
+                      >
+                        Agregar al carrito
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="modal fade modal-producto container-fluid flex-row"
+            id="detallesProducto"
+          >
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+              <div class="modal-content contenedor_modal row mx-0">
+                <div class="modal-header border-0">
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="row">
+                  <div class="col-md-5 m-auto m-3 ms-2 ms-md-4">
+                    <img
+                      src="https://placehold.co/800@2x.png"
+                      class="img-fluid imagen-producto rounded"
+                      alt="imagen del producto"
+                    />
+                  </div>
+                  <div class="col-md-6 m-auto mb-5">
+                    <h4
+                      class="modal-title nombre_p text-start mb-2 mt-1"
+                      id="exampleModalLabel"
+                    >
+                      Titulo del producto
+                    </h4>
+                    <p class="text-start">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Architecto, omnis. Veritatis, odit sunt laboriosam nulla
+                      sint quibusdam possimus commodi eaque quo illum. Labore
+                      eligendi perspiciatis sit ab voluptatum doloremque
+                      suscipit.
+                    </p>
+                    <p class="precio text-start">$000</p>
+                    <div class="modal-footer border-0">
+                      <button
+                        type="button"
+                        class="btn btn-primary boton_producto align-items-center m-auto"
+                      >
+                        Agregar al carrito
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="container-fluid pie_de_pagina">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4 d-flex justify-content-center">
+              <div class="py-md-5 my-auto pe-4 py-4">
+                <ul class="list-unstyled">
+                  <li class="mb-3">Facebook</li>
+                  <li class="mb-3">Instagram</li>
+                  <li>Pagina Oficial</li>
+                </ul>
+              </div>
+              <div>
+                <ul class="list-unstyled py-md-5 py-4">
+                  <li class="mb-3">
+                    <a
+                      href="https://www.facebook.com/SylvanianFamilies.es"
+                      target="_blank"
+                      class="enlace_rs"
+                      ><i class="bi bi-facebook icon_rs"></i
+                    ></a>
+                  </li>
+                  <li class="mb-3">
+                    <a
+                      href="https://www.instagram.com/sylvanianfamilies_es/"
+                      target="_blank"
+                      class="enlace_rs"
+                      ><i class="bi bi-instagram icon_rs"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.sylvanianfamilies.com/es-es/"
+                      target="_blank"
+                      class="enlace_rs"
+                      ><i class="bi bi-cursor-fill icon_rs"></i
+                    ></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-4 p-md-5 m-auto py-2">
+              <div class="container">
+                <form role="search">
+                  <div class="position-relative">
+                    <i class="bi bi-search position-absolute iconbusqueda"></i>
+                    <input
+                      class="form-control rounded-pill ps-4"
+                      type="search"
+                      placeholder="Search"
+                      aria-label="Search"
+                    />
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="col-md-4 p-5 m-auto">
+              <p>
+                Disfruta de nuestro contenido para nuestras redes sociales, ten
+                atento a la mercancia nueva y otras actualizaciones.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.bundle.js"></script>
+  </body>
 </html>
