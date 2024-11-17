@@ -199,3 +199,7 @@ input{
 .seleccion {
 	color: black;
 }
+
+#casita, #titulo {
+	display: none;
+}

@@ -2,25 +2,33 @@ function verifyLogin() {
   const statusLogin = localStorage.getItem("login") === "true";
   
   if (statusLogin) {
-    const registroForm = document.getElementById("registroForm");
-    const buttonLogin = document.getElementById("buttonLogin");
-    const buttonLogout = document.getElementById("buttonLogout");
-    const contactameForm = document.getElementById("contactameForm");
+   // const registroForm = document.getElementById("registroForm");
+    const registroForm = $("#registroForm");
+   // const buttonLogin = document.getElementById("buttonLogin");
+    const buttonLogin = $("#buttonLogin");
+    //const buttonLogout = document.getElementById("buttonLogout");
+    const buttonLogout = $("#buttonLogout");
+    //const contactameForm = document.getElementById("contactameForm");
+    const contactameForm = $("#contactameForm");
 
-    if (registroForm) registroForm.style.display = "none";
-    if (buttonLogin) buttonLogin.style.display = "none";
-    if (buttonLogout) buttonLogout.style.display = "block";
-    if (contactameForm) contactameForm.style.display = "block";
+    if (registroForm) registroForm.css("display","none");
+    if (buttonLogin) buttonLogin.css("display","none");
+    if (buttonLogout) buttonLogout.css("display","block");
+    if (contactameForm) contactameForm.css("display","block");
   } else {
-    const registroForm = document.getElementById("registroForm");
-    const buttonLogin = document.getElementById("buttonLogin");
-    const buttonLogout = document.getElementById("buttonLogout");
-    const contactameForm = document.getElementById("contactameForm");
+    const registroForm = $("#registroForm");
+    const buttonLogin = $("#buttonLogin");
+    const buttonLogout = $("#buttonLogout");
+    const contactameForm = $("#contactameForm");
+    //const registroForm = document.getElementById("registroForm");
+    //const buttonLogin = document.getElementById("buttonLogin");
+    //const buttonLogout = document.getElementById("buttonLogout");
+    //const contactameForm = document.getElementById("contactameForm");
 
-    if (registroForm) registroForm.style.display = "block";
-    if (buttonLogin) buttonLogin.style.display = "block";
-    if (contactameForm) contactameForm.style.display = "none";
-    if (buttonLogout) buttonLogout.style.display = "none";
+    if (registroForm) registroForm.css("display","block");
+    if (buttonLogin) buttonLogin.css("display","block");
+    if (contactameForm) contactameForm.css("display","none");
+    if (buttonLogout) buttonLogout.css("display","none");
   }
 }
 
@@ -42,7 +50,8 @@ async function loginUser(email, password) {
     const result = await response.json();
     if (result.success) {
       localStorage.setItem("login", "true");
-      document.getElementById("formLogin").reset();
+      //document.getElementById("formLogin").reset();
+      $("#formLogin").trigger("reset");
       alert("Ya iniciaste session");
       setTimeout(() => verifyLogin());
     } else {
@@ -68,7 +77,8 @@ async function registerUser(name, email, phone, password) {
 
     const result = await response.json();
     if (result.success) {
-      document.getElementById("formRegister").reset();
+      //document.getElementById("formRegister").reset();
+      $("#formRegister").trigger("reset");
       alert("Usuario registrado exitosamente");
     } else {
       alert("Error al registrarse");
@@ -80,41 +90,55 @@ async function registerUser(name, email, phone, password) {
 }
 
 const init = () => {
-  const formRegister = document.getElementById("formRegister");
+  //const formRegister = document.getElementById("formRegister");
+  const formRegister = $("#formRegister");
   if (formRegister) {
-    formRegister.addEventListener("submit", async (event) => {
+    //formRegister.addEventListener("submit", async (event) => {
+    formRegister.on("submit", async (event) => {
       event.preventDefault();
 
-      const name = document.getElementById("nameUser").value;
-      const email = document.getElementById("emailUser").value;
-      const phone = document.getElementById("phoneUser").value;
-      const password = document.getElementById("passwordUser").value;
+      const name = $("#nameUser").val();
+      const email = $("#emailUser").val();
+      const phone = $("#phoneUser").val();
+      const password = $("#passwordUser").val();
+      //const name = document.getElementById("nameUser").value;
+      //const email = document.getElementById("emailUser").value;
+      //const phone = document.getElementById("phoneUser").value;
+      //const password = document.getElementById("passwordUser").value;
+
 
       await registerUser(name, email, phone, password);
     });
   }
 
-  const formLogin = document.getElementById("formLogin");
+ // const formLogin = document.getElementById("formLogin");
+  const formLogin = $("#formLogin");
   if (formLogin) {
-    document
-      .getElementById("formLogin")
-      .addEventListener("submit", async (event) => {
+   // document
+    //  .getElementById("formLogin")
+    $("#formLogin")
+      .on("submit", async (event) => {
         event.preventDefault();
 
-        const name = document.getElementById("emailUserLogin").value;
-        const password = document.getElementById("passwordUserLogin").value;
+        const name = $("#emailUserLogin").val();
+        const password = $("#passwordUserLogin").val();
+       // const name = document.getElementById("emailUserLogin").value;
+       // const password = document.getElementById("passwordUserLogin").value;
 
         await loginUser(name, password);
       });
   }
 
-  const buttonLogout = document.getElementById("buttonLogout");
+  //const buttonLogout = document.getElementById("buttonLogout");
+  const buttonLogout = $("#buttonLogout");
   if (buttonLogout) {
-    document
-      .getElementById("buttonLogout")
-      .addEventListener("click", async (event) => {
-        logoutUser();
-      });
+    //document
+    //  .getElementById("buttonLogout")
+    //  .addEventListener("click", async (event) => {
+    //    logoutUser();
+    //  });
+    $("#buttonLogout")
+      .on("click", () => logoutUser() );
   }
 
   verifyLogin();
